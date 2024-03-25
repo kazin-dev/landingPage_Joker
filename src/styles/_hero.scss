@@ -1,0 +1,116 @@
+@use 'variaveis';
+
+
+.hero {
+    background-image: url(/image/joker_hero.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 100vh;
+    
+    
+    &__container{
+        max-width: 1224px;
+        width: 100%;
+        margin: 0 auto; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__base{
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 576px) {
+            display: block;
+        }
+
+        @media (min-width: 576px) and (max-width: 1224px) {
+            padding: 24px;
+        }
+        &__post{
+            @media (max-width: 576px) {
+                margin-left: 32%;
+            }
+            img{
+                border-radius: 10px;
+                margin-right: 18px;
+            }
+        }
+
+        &__description{
+
+            padding: 12px;
+            
+            &__entry-header{
+                
+                margin-bottom: 20px;
+                
+                &__content{
+                    color: variaveis.$informationText;
+                }
+            }
+        }
+    }
+}
+
+.hero__sombra-img {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.imagem-de-fundo {
+    position: relative; 
+    width: 100%;
+    height: 300px;
+}
+
+.imagem-de-fundo::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100vw; 
+    height: 91vh;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.imagem-de-fundo img {
+    width: 100vw;
+    height: 91vh;
+    object-fit: cover;
+}
+
+.information{
+    margin-top: 28px;
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        line-height: 1.5rem;
+
+        @media (max-width: 576px) {
+            padding: 12px;
+        }
+
+        &__info{
+            span{
+                display: block;
+                color: variaveis.$textColor;
+                font-size: .95rem;
+                margin-bottom: .5rem;
+                opacity: .7;
+            }
+
+            p{
+                display: flex;
+                padding-bottom: 10px;
+                color: variaveis.$informationText;
+                font-size: 14px;
+            }
+        }
+    }
+}
